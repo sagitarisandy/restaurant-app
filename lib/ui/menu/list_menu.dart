@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_dicoding/ui/menu/detail_menu.dart';
 import 'package:restaurant_dicoding/ui/menu/menu.dart';
 
 class ListMenu extends StatelessWidget{
@@ -50,7 +51,9 @@ class ListMenu extends StatelessWidget{
         title: Text(restaurant.name),
         subtitle: Text('Rating: ${restaurant.rating.toString()} - ${restaurant.city}'),
         onTap: () {
-
+          Navigator.pushNamed(context, DetailMenuPage.routeName,
+            arguments: restaurant
+          );
         },
       ),
     );
