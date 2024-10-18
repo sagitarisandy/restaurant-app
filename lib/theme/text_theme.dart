@@ -2,35 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final myTextTheme = TextTheme(
-  displayLarge: GoogleFonts.merriweather(
+  displayLarge: GoogleFonts.poppins(
       fontSize: 92, fontWeight: FontWeight.w300, letterSpacing: -1.5),
-  displayMedium: GoogleFonts.merriweather(
+  displayMedium: GoogleFonts.poppins(
       fontSize: 57, fontWeight: FontWeight.w300, letterSpacing: -0.5),
-  displaySmall:
-      GoogleFonts.merriweather(fontSize: 46, fontWeight: FontWeight.w400),
-  headlineLarge: GoogleFonts.merriweather(
+  displaySmall: GoogleFonts.poppins(
+      fontSize: 46, fontWeight: FontWeight.w400),
+  headlineLarge: GoogleFonts.poppins(
       fontSize: 32, fontWeight: FontWeight.w400, letterSpacing: 0.25),
-  headlineMedium: GoogleFonts.merriweather(
+  headlineMedium: GoogleFonts.poppins(
       fontSize: 28, fontWeight: FontWeight.w400, letterSpacing: 0.5),
-  headlineSmall:
-      GoogleFonts.merriweather(fontSize: 23, fontWeight: FontWeight.w400),
-  titleLarge: GoogleFonts.merriweather(
+  headlineSmall: GoogleFonts.poppins(
+      fontSize: 23, fontWeight: FontWeight.w400),
+  titleLarge: GoogleFonts.poppins(
       fontSize: 19, fontWeight: FontWeight.w500, letterSpacing: 0.15),
-  titleMedium: GoogleFonts.merriweather(
+  titleMedium: GoogleFonts.poppins(
       fontSize: 15, fontWeight: FontWeight.w400, letterSpacing: 0.15),
-  titleSmall: GoogleFonts.merriweather(
+  titleSmall: GoogleFonts.poppins(
       fontSize: 13, fontWeight: FontWeight.w500, letterSpacing: 0.1),
-  bodyLarge: GoogleFonts.libreFranklin(
+  bodyLarge: GoogleFonts.poppins(
       fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.5),
-  bodyMedium: GoogleFonts.libreFranklin(
+  bodyMedium: GoogleFonts.poppins(
       fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.25),
-  bodySmall: GoogleFonts.libreFranklin(
+  bodySmall: GoogleFonts.poppins(
       fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 0.4),
-  labelLarge: GoogleFonts.libreFranklin(
+  labelLarge: GoogleFonts.poppins(
       fontSize: 14, fontWeight: FontWeight.w500, letterSpacing: 1.25),
-  labelMedium: GoogleFonts.libreFranklin(
+  labelMedium: GoogleFonts.poppins(
       fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 1.25),
-  labelSmall: GoogleFonts.libreFranklin(
+  labelSmall: GoogleFonts.poppins(
       fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
-
 );

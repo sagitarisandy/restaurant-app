@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:restaurant_dicoding/custom-widget/platform_widget.dart';
 import 'package:restaurant_dicoding/theme/styles.dart';
 import 'package:restaurant_dicoding/ui/menu/list_menu.dart';
+import 'package:restaurant_dicoding/ui/message/message.dart';
 import 'package:restaurant_dicoding/ui/profile/profile.dart';
 import 'dart:io';
 import 'package:badges/badges.dart' as badges;
@@ -21,7 +22,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _bottomNavIndex = 0;
   int _selectedIndex = 0;
-  int orderCount = 5;
+  int promoCount = 2;
   late List<BottomNavigationBarItem> _bottomNavBarItems;
 
   void _onItemTapped(int index) {
@@ -36,34 +37,43 @@ class _HomePageState extends State<HomePage> {
       BottomNavigationBarItem(
         icon: SvgPicture.asset(
           _selectedIndex == 0
-              ? 'assets/icon-navbar/home.svg'
-              : 'assets/icon-navbar/home_inactive.svg',
-          width: 26,
-          height: 26,
+              ? 'assets/navbar-icon/foods.svg'
+              : 'assets/navbar-icon/foods_inactive.svg',
+          width: 32,
+          height: 32,
         ),
       ),
       BottomNavigationBarItem(
         icon: badges.Badge(
           badgeContent: Text(
-            orderCount.toString(),
+            promoCount.toString(),
             style: const TextStyle(color: Colors.white),
           ),
           child: SvgPicture.asset(
             _selectedIndex == 1
-                ? 'assets/icon-navbar/your_order.svg'
-                : 'assets/icon-navbar/your_order_inactive.svg',
-            width: 26,
-            height: 26,
+                ? 'assets/navbar-icon/promo.svg'
+                : 'assets/navbar-icon/promo_inactive.svg',
+            width: 32,
+            height: 32,
           ),
         ),
       ),
       BottomNavigationBarItem(
         icon: SvgPicture.asset(
           _selectedIndex == 2
-              ? 'assets/icon-navbar/profile.svg'
-              : 'assets/icon-navbar/profile_inactive.svg',
-          width: 26,
-          height: 26,
+              ? 'assets/navbar-icon/activity.svg'
+              : 'assets/navbar-icon/activity_inactive.svg',
+          width: 32,
+          height: 32,
+        ),
+      ),
+      BottomNavigationBarItem(
+        icon: SvgPicture.asset(
+          _selectedIndex == 3
+              ? 'assets/navbar-icon/message.svg'
+              : 'assets/navbar-icon/message_inactive.svg',
+          width: 32,
+          height: 32,
         ),
       ),
     ];
@@ -85,8 +95,10 @@ class _HomePageState extends State<HomePage> {
             return YourOrderPage();
           case 2:
             return ProfilePage();
+          case 3:
+            return MessagePage();
           default:
-            return ProfilePage();
+            return MessagePage();
         }
       },
     );

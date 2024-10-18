@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget{
-  const ProfilePage({Key? key}) : super (key: key);
+class MessagePage extends StatelessWidget{
+  static const routeName = '/message';
+
+  const MessagePage({Key? key}) : super (key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class ProfilePage extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Your Activity Here')
+            Text('Your Message Here')
           ],
         ),
       ),

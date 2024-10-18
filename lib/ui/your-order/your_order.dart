@@ -10,7 +10,7 @@ class YourOrderPage extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Your Order Here')
+            Text('Your Promo Here')
           ],
         ),
       ),

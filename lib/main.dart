@@ -30,7 +30,10 @@ class MyApp extends StatelessWidget{
         ),
         initialRoute: '/',
         routes: {
-          HomePage.routeName:(context) => HomePage(), 
+          HomePage.routeName:(context) => HomePage(),
+          DetailMenuPage.routeName:(context) => DetailMenuPage(
+            restaurant: Restaurant(id: '', name: '', description: '', pictureId: '', city: '', rating: 0.0, menus: Menus(foods: [], drinks: [])),
+          ),
         },
       )
     : MaterialApp(

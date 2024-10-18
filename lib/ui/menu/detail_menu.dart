@@ -18,6 +18,7 @@ class DetailMenuPage extends StatelessWidget{
     final Restaurant restaurant = ModalRoute.of(context)!.settings.arguments as Restaurant;
 
     return CustomScaffold(
+      restaurant: restaurant,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -30,16 +31,8 @@ class DetailMenuPage extends StatelessWidget{
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(restaurant.description),
+                  Text(restaurant.description, style: TextStyle(color: Colors.black),),
                   Divider(color: Colors.grey),
-                  Text(
-                    restaurant.name,
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24
-                    ),
-                  ),
                 ],
               ),
             )
