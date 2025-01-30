@@ -4,8 +4,9 @@ import 'package:restaurant_dicoding/theme/styles.dart';
 import 'package:restaurant_dicoding/ui/menu/menu.dart';
 import 'dart:io';
 import 'package:badges/badges.dart' as badges;
+import 'package:lottie/lottie.dart';
 
-class CustomScaffold extends StatelessWidget {
+class CustomScaffold extends StatefulWidget {
   final Widget body;
   final Restaurant restaurant;
 
@@ -14,6 +15,14 @@ class CustomScaffold extends StatelessWidget {
     required this.body,
     required this.restaurant,
   }) : super(key: key);
+
+  @override
+  _CustomScaffoldState createState() => _CustomScaffoldState();
+}
+
+class _CustomScaffoldState extends State<CustomScaffold> {
+  bool _isLiked = false;
+  bool _isAnimating = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +44,7 @@ class CustomScaffold extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                restaurant.name,
+                widget.restaurant.name,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
@@ -45,30 +54,53 @@ class CustomScaffold extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-
+                if(!_isAnimating) {
+                  setState(() {
+                    _isAnimating = true;
+                  });
+                  Future.delayed(Duration(seconds: 1),() {
+                    setState(() {
+                      _isLiked = true;
+                      _isAnimating = false;
+                    });
+                  });
+                }
               },
-              icon: badges.Badge(
-                badgeContent: Text(
-                  '5',
-                  style: const TextStyle(
-                    color: darkPrimaryColor
-                  ),
-                ),
-                child: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.white,
-                ),
-                badgeStyle: badges.BadgeStyle(
-                  badgeColor: secondaryColor
-                ),
-              ),
-            )
+              icon: _isLiked
+                ? Container(
+                  height: 60,
+                  width: 60,
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    )
+                  ) 
+                : (_isAnimating
+                  ? Lottie.asset(
+                    'assets/others/love2.json',
+                    width: 60,
+                    height: 60
+                    )
+                  : Container(
+                    height: 60,
+                    width: 60,
+                      child: Icon(
+                        Icons.favorite_outline,
+                        color: Colors.white,
+                      )
+                  ) 
+                  )
+              // Icon(
+              //   Icons.favorite,
+              //   color: Colors.white,
+              //   ),
+            ),
           ],
         ),
         centerTitle: false,
       ),
       body: SafeArea(
-        child: body,
+        child: widget.body,
       ),
     ):CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
@@ -83,15 +115,54 @@ class CustomScaffold extends StatelessWidget {
           ),
         ),
         middle: Text(
-          restaurant.name,
+          widget.restaurant.name,
           style: TextStyle(
             color: Colors.white,
             fontSize: 17
           ),
         ),
+        trailing: IconButton(
+          onPressed: () {
+            if(!_isAnimating) {
+              setState(() {
+                _isAnimating = true;
+              });
+              Future.delayed(Duration(seconds: 2), (){
+                setState(() {
+                  _isLiked = true;
+                  _isAnimating = false;
+                });
+              });
+            }
+          },
+          icon: _isLiked
+            ? Container(
+              height: 30,
+              width: 30,
+              child: Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
+            )
+            : (_isAnimating
+            ? Lottie.asset(
+              'assets/others/love2.json',
+              width: 40,
+              height: 40
+            )
+            : Container(
+              height: 30,
+              width: 30,
+              child: Icon(
+                Icons.favorite_outline,
+                color: Colors.white,
+              ),
+            )
+            )
+        ),
       ),
       child: SafeArea(
-        child: body,
+        child: widget.body,
       ),
     );
   }

@@ -34,6 +34,7 @@ dependencies:
   badges: ^3.1.2
   flutter_svg: ^2.0.3
   carousel_slider: ^5.0.0
+  lottie: ^3.1.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -67,8 +68,26 @@ flutter:
     - assets/navbar-icon/promo_inactive.svg
     - assets/navbar-icon/promo.svg
     
-    - assets/others/location.svg
+    - assets/others/love.json
+    - assets/others/love2.json
     - assets/others/restaurant.svg
+    - assets/others/no_image.svg
+
+    - assets/menu-icon/24-hours.svg
+    - assets/menu-icon/boiled.svg
+    - assets/menu-icon/cakes.svg
+    - assets/menu-icon/dish.svg
+    - assets/menu-icon/fast-food.svg
+    - assets/menu-icon/fry.svg
+    - assets/menu-icon/mart.svg
+    - assets/menu-icon/new.svg
+    - assets/menu-icon/noodles.svg
+    - assets/menu-icon/popular.svg
+    - assets/menu-icon/promo.svg
+    - assets/menu-icon/rice.svg
+    - assets/menu-icon/snack.svg
+    - assets/menu-icon/street-food.svg
+    - assets/menu-icon/drinks.svg
 
 
     - assets/local_restaurant.json
